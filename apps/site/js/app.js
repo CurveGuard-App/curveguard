@@ -9,7 +9,7 @@ import {
 } from "./core/index.js";
 
 const CONFIG = {
-  tokenCa: "", // Populated automatically at T=0
+  tokenCa: "0xb664e4e875c1d3130D1f0b263cf5574C9432549F", // Populated automatically at T=0
   sealRegistry: "0xa663a02c98d18f18f1a5212967a2674bad8294a2", // Populated when AuditSealRegistry.sol is deployed on 4663
   rpcUrl: RH_CHAIN_DEFAULTS.rpcUrl,
   defaultToken: "0xcd5c01ea857df6253323a1bde87cd1d3a442a8f7",
@@ -265,7 +265,7 @@ async function renderRadar(root) {
             ${items
               .map((it) => {
                 const taxPct = ((it.creatorTaxBps || 0) / 100).toFixed(2) + "%";
-                const taxWarn = (it.creatorTaxBps || 0) > 200;
+                const taxWarn = (it.creatorTaxBps || 0) >= 300;
                 return `
                   <tr>
                     <td>

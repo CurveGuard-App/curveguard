@@ -348,9 +348,9 @@ export function analyzeCurveForensics({
     score += 10;
   }
 
-  if (creatorTaxBps > 200) {
-    score -= 14;
-    flags.push(`HIGH_CREATOR_TAX: ${(creatorTaxBps / 100).toFixed(2)}% creator tax (>2.00% fee-farm threshold)`);
+  if (creatorTaxBps >= 300) {
+    score -= 10;
+    flags.push(`MAX_CREATOR_TAX: ${(creatorTaxBps / 100).toFixed(2)}% creator tax`);
   }
 
   if (swarmClusters.length >= 2) {
