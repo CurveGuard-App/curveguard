@@ -35,6 +35,8 @@ export function findGlobalBinary(binName = "curveguard", envPath = process.env.P
   return null;
 }
 
+export const NPX_PACKAGE_SPEC = "github:CurveGuard-App/curveguard";
+
 export function buildMcpCommandSpec({ globalInstalled = false, platform = process.platform, forGuiApp = false } = {}) {
   if (globalInstalled && !forGuiApp) {
     if (platform === "win32") {
@@ -43,9 +45,9 @@ export function buildMcpCommandSpec({ globalInstalled = false, platform = proces
     return { command: "curveguard", args: ["mcp"] };
   }
   if (platform === "win32" && forGuiApp) {
-    return { command: "cmd", args: ["/c", "npx", "-y", "curveguard", "mcp"] };
+    return { command: "cmd", args: ["/c", "npx", "-y", NPX_PACKAGE_SPEC, "mcp"] };
   }
-  return { command: "npx", args: ["-y", "curveguard", "mcp"] };
+  return { command: "npx", args: ["-y", NPX_PACKAGE_SPEC, "mcp"] };
 }
 
 function backupOnce(filePath) {

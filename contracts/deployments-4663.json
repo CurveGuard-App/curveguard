@@ -16,7 +16,7 @@
     }
   },
   "token": {
-    "symbol": "CGUARD",
+    "symbol": null,
     "address": null,
     "creatorTaxBps": 195
   }

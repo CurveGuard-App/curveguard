@@ -41,7 +41,7 @@ test("runInit configures Cursor, Claude Code & Codex idempotently with .curvegua
 
     const written = JSON.parse(fs.readFileSync(cursorMcpPath, "utf8"));
     assert.ok(written.mcpServers.existingServer, "preserved existing user MCP server");
-    assert.deepEqual(written.mcpServers.curveguard, { command: "npx", args: ["-y", "curveguard", "mcp"] });
+    assert.deepEqual(written.mcpServers.curveguard, { command: "npx", args: ["-y", "github:CurveGuard-App/curveguard", "mcp"] });
     assert.equal(fs.existsSync(`${cursorMcpPath}.curveguard-bak`), true, "wrote backup once");
 
     // Running a second time is a no-op (`unchanged`)

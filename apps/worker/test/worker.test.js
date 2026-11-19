@@ -13,7 +13,7 @@ test("Worker serves /llms.txt, /v1/radar, /v1/seals/proof, /v1/tier & remote /mc
   const llmsRes = await worker.fetch(new Request("https://curveguard.test/llms.txt"), {}, mockCtx);
   assert.equal(llmsRes.status, 200);
   const llmsTxt = await llmsRes.text();
-  assert.ok(llmsTxt.includes("npx curveguard init"));
+  assert.ok(llmsTxt.includes("github:CurveGuard-App/curveguard init"));
 
   const radarRes = await worker.fetch(new Request("https://curveguard.test/v1/radar?limit=5"), {}, mockCtx);
   assert.equal(radarRes.status, 200);

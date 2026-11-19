@@ -14,16 +14,16 @@ Requires Node.js 20+. Zero external npm dependencies, zero signup, zero wallet c
 
 ```bash
 # Auto-detect and wire Cursor, Claude Code, Codex & Claude Desktop
-npx curveguard init
+npx -y github:CurveGuard-App/curveguard init
 
 # Live 0-wallet sniper-wall & swarm X-ray on any Robinhood Chain / Pons token
-npx curveguard scan 0xcd5c01ea857df6253323a1bde87cd1d3a442a8f7
+npx -y github:CurveGuard-App/curveguard scan 0xcd5c01ea857df6253323a1bde87cd1d3a442a8f7
 
 # Replay Stop-Loss + Trailing-Stop + Exit-Before-Sniper-Wall on historical curve blocks
-npx curveguard replay 0xda4283f14b487034b90d865aac489994f2c680c4 --entry-sec 12 --eth 0.1 --sl 25 --trail 14
+npx -y github:CurveGuard-App/curveguard replay 0xda4283f14b487034b90d865aac489994f2c680c4 --entry-sec 12 --eth 0.1 --sl 25 --trail 14
 
 # Arm local curve watcher (0 keys leave your machine)
-npx curveguard guard 0xcd5c01ea857df6253323a1bde87cd1d3a442a8f7 --sl 18 --trail 14 --exit-before-wall
+npx -y github:CurveGuard-App/curveguard guard 0xcd5c01ea857df6253323a1bde87cd1d3a442a8f7 --sl 18 --trail 14 --exit-before-wall
 ```
 
 ## Architecture

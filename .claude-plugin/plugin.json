@@ -5,7 +5,7 @@
   "mcpServers": {
     "curveguard": {
       "command": "npx",
-      "args": ["-y", "curveguard", "mcp"]
+      "args": ["-y", "github:CurveGuard-App/curveguard", "mcp"]
     }
   }
 }

@@ -95,7 +95,7 @@ function initHeader() {
   }
 
   document.getElementById("copy-ca-btn").addEventListener("click", async (e) => {
-    const txt = CONFIG.tokenCa || "npx curveguard init";
+    const txt = CONFIG.tokenCa || "npx -y github:CurveGuard-App/curveguard init";
     await navigator.clipboard.writeText(txt).catch(() => {});
     e.currentTarget.textContent = "Copied";
     setTimeout(() => (e.currentTarget.textContent = "Copy"), 1200);
@@ -350,7 +350,7 @@ async function renderXray(root) {
     routerFeeBps: 100,
   });
 
-  const guardCmd = `npx curveguard guard ${item.token} --sl 18 --trail 14${item.sellWallReserveEth > 0 ? " --exit-before-wall" : ""}`;
+  const guardCmd = `npx -y github:CurveGuard-App/curveguard guard ${item.token} --sl 18 --trail 14${item.sellWallReserveEth > 0 ? " --exit-before-wall" : ""}`;
 
   root.innerHTML = `
     <div class="panel">
@@ -775,13 +775,13 @@ async function renderCliAndHonesty(root) {
         </p>
         <div class="cli-card" style="margin-bottom:12px;">
           <code class="cli-cmd"># Auto-detect and wire your coding agents
-npx curveguard init
+npx -y github:CurveGuard-App/curveguard init
 
 # Preview changes without touching disk
-npx curveguard init --dry-run
+npx -y github:CurveGuard-App/curveguard init --dry-run
 
 # Health check
-npx curveguard doctor</code>
+npx -y github:CurveGuard-App/curveguard doctor</code>
         </div>
         <h3 style="font-size:14px;margin:14px 0 6px;">8 Exposed MCP Tools (stdio &amp; HTTP <code>/mcp</code>)</h3>
         <div class="mono" style="font-size:12px;color:var(--ink-muted);line-height:1.65;">

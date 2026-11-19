@@ -199,7 +199,7 @@ export async function executeMcpTool(name, args = {}, { apiUrl = DEFAULT_API_URL
       const scan = await core.scanPonsTokenLive(args.token, { rpcUrl, fetchImpl });
       const m = scan.forensics.metrics;
       const wallFlag = m.sellWallReserveEth > 0 ? ` --exit-before-wall` : "";
-      const cmd = `npx curveguard guard ${scan.token.address} --sl 18 --trail 14${wallFlag}`;
+      const cmd = `npx -y github:CurveGuard-App/curveguard guard ${scan.token.address} --sl 18 --trail 14${wallFlag}`;
       return {
         symbol: scan.token.symbol,
         verdict: scan.forensics.verdict,
