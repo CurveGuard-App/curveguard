@@ -7,6 +7,8 @@
 - **Web Terminal:** [https://curveguard.app](https://curveguard.app)
 - **GitHub:** [https://github.com/CurveGuard-App/curveguard](https://github.com/CurveGuard-App/curveguard)
 - **X:** [https://x.com/curveguardapp](https://x.com/curveguardapp)
+- **`$CGUARD` (Robinhood Chain `4663`):** [`0xb664e4e875c1d3130D1f0b263cf5574C9432549F`](https://ponsfamily.com/launchpad/0xb664e4e875c1d3130D1f0b263cf5574C9432549F) (`100%` dev bag burned: [`0x4ea5715f…`](https://robinhoodchain.blockscout.com/tx/0x4ea5715fbc88e6b4e6d7bd0b5da7d31b6c0e6b31ad85bfe3d0d4fff02ef2ec82))
+- **`AuditSealRegistry.sol`:** [`0xa663a02c98d18f18f1a5212967a2674bad8294a2`](https://robinhoodchain.blockscout.com/address/0xa663a02c98d18f18f1a5212967a2674bad8294a2) · [Sourcify `exact_match`](https://repo.sourcify.dev/4663/0xa663a02c98d18f18f1a5212967a2674bad8294a2) (machine-readable: [`contracts/deployments-4663.json`](contracts/deployments-4663.json))
 
 ## Quickstart (CLI & MCP)
 
