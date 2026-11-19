@@ -1,0 +1,33 @@
+name = "curveguard"
+main = "src/index.js"
+compatibility_date = "2026-11-18"
+workers_dev = true
+
+routes = [
+  { pattern = "curveguard.app", custom_domain = true },
+  { pattern = "www.curveguard.app", custom_domain = true },
+]
+
+[assets]
+directory = "../site"
+binding = "ASSETS"
+run_worker_first = ["/v1/*", "/mcp", "/llms.txt", "/status.json"]
+
+[triggers]
+crons = ["5 * * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "curveguard-db"
+database_id = "00000000-0000-0000-0000-000000000000"
+
+[vars]
+CHAIN_ID = "4663"
+RH_RPC_URL = "https://rpc.mainnet.chain.robinhood.com"
+SHERWOOD_API_URL = "https://api.sherwood.stream/v1/public"
+SEAL_REGISTRY_ADDRESS = "0xa663a02c98d18f18f1a5212967a2674bad8294a2"
+GUARD_TOKEN_ADDRESS = ""
+HOLDER_TIER_1 = "1000000"
+HOLDER_TIER_2 = "5000000"
+BURN_PASS_AMOUNT = "250000"
+SITE_NAME = "CurveGuard"

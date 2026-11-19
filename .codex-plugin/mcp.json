@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "curveguard": {
+      "command": "npx",
+      "args": ["-y", "curveguard", "mcp"]
+    }
+  }
+}

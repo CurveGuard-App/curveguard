@@ -1,0 +1,19 @@
+{
+  "name": "@curveguard/core",
+  "version": "0.1.0",
+  "description": "Zero-dependency Pons v2 bonding-curve math, sniper/swarm forensics, replay engine, and keccak256 Merkle proof verifier.",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./keccak": "./src/keccak.js",
+    "./curve": "./src/curve.js",
+    "./forensics": "./src/forensics.js",
+    "./merkle": "./src/merkle.js",
+    "./replay": "./src/replay.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "license": "MIT"
+}

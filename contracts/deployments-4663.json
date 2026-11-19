@@ -1,0 +1,23 @@
+{
+  "chainId": 4663,
+  "network": "Robinhood Chain",
+  "rpcUrl": "https://rpc.mainnet.chain.robinhood.com",
+  "explorerUrl": "https://robinhoodchain.blockscout.com",
+  "contracts": {
+    "AuditSealRegistry": {
+      "address": "0xa663a02c98d18f18f1a5212967a2674bad8294a2",
+      "deployTx": "0x4a91cb14b2b08e6112d0dff1635c2924d84fb452e7ab1e3cf5f23f8c58554113",
+      "sealer": "0x95f12cd2a0bb13f29fd33e04c40325746281ae77",
+      "deployer": "0x807794b9979335a5aa0f72d24a3e36ac9495e787",
+      "firstSealTx": "0x521df7f53eda7a59975365870a38ca8b6a7182e43b75b716204b80a50468a431",
+      "compiler": "0.8.24+commit.e11b9ed9",
+      "sourcifyVerified": true,
+      "sourcifyMatch": "exact_match"
+    }
+  },
+  "token": {
+    "symbol": "CGUARD",
+    "address": null,
+    "creatorTaxBps": 195
+  }
+}

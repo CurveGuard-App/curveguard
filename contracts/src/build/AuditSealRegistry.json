@@ -1,0 +1,369 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint64",
+          "name": "epochHour",
+          "type": "uint64"
+        }
+      ],
+      "name": "AlreadySealed",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "TokenAlreadyBound",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Unauthorized",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "ZeroValue",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint64",
+          "name": "epochHour",
+          "type": "uint64"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "merkleRoot",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "tokenCount",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "cleanCount",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "sealedAt",
+          "type": "uint64"
+        }
+      ],
+      "name": "EpochSealed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        }
+      ],
+      "name": "GuardTokenBound",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousSealer",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newSealer",
+          "type": "address"
+        }
+      ],
+      "name": "SealerUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "HOLDER_TIER_1",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "HOLDER_TIER_2",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token_",
+          "type": "address"
+        }
+      ],
+      "name": "bindToken",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint64",
+          "name": "epochHour",
+          "type": "uint64"
+        }
+      ],
+      "name": "getSeal",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "merkleRoot",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint64",
+          "name": "sealedAt",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint32",
+          "name": "tokenCount",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint32",
+          "name": "cleanCount",
+          "type": "uint32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "guardToken",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "latestEpoch",
+      "outputs": [
+        {
+          "internalType": "uint64",
+          "name": "",
+          "type": "uint64"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint64",
+          "name": "epochHour",
+          "type": "uint64"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "merkleRoot",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint32",
+          "name": "tokenCount",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint32",
+          "name": "cleanCount",
+          "type": "uint32"
+        }
+      ],
+      "name": "sealEpoch",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "sealer",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newSealer",
+          "type": "address"
+        }
+      ],
+      "name": "setSealer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "wallet",
+          "type": "address"
+        }
+      ],
+      "name": "tierOf",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "tier",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "balance",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalEpochsSealed",
+      "outputs": [
+        {
+          "internalType": "uint64",
+          "name": "",
+          "type": "uint64"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint64",
+          "name": "epochHour",
+          "type": "uint64"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "leafHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "proof",
+          "type": "bytes32[]"
+        }
+      ],
+      "name": "verifyAuditLeaf",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080806040523461007c5760018060a01b031933815f5416175f5533906001541617600155335f7f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e08180a3335f7ff22549dd409130dc81be1d022d963887b72c83c603c9f0b92922cf782467f26c8180a36108bf90816100818239f35b5f80fdfe6080604081815260049182361015610015575f80fd5b5f3560e01c9081630cd685bc1461066a575080632aea4d21146106425780633ff5aa021461059e57806342686615146105795780636547c800146104fa5780638da5cb5b146104d35780639cb118bf146104a8578063be340cc514610484578063c8f74bb814610448578063cca63300146103d7578063e56588ef146103af578063f2fde38b1461033a578063fcb9f37d1461014c5763fce10c57146100b9575f80fd5b34610148576020366003190112610148576001600160a01b0382358181169391929084900361014857825f5416330361013c57831561012f575050816001549182167ff22549dd409130dc81be1d022d963887b72c83c603c9f0b92922cf782467f26c5f80a36001600160a01b03191617600155005b51637c946ed760e01b8152fd5b516282b42960e81b8152fd5b5f80fd5b50346101485760803660031901126101485761016661068e565b90602435926044359163ffffffff8084168094036101485760643590811680910361014857600154336001600160a01b039182161415908161032c575b5061031f5767ffffffffffffffff8086169586158015610317575b801561030f575b6102ff57865f5284602052816001855f200154166102e8579181606095937fd2de9ccf0d5e775ed7934d9e4c03948fc1cffe29035c8524023bb340bc6b4194979593421694845190610216826106a5565b8b82528a84600160208501948a8652898101948c86528d8201948a86525f52602052895f2090518155019351166bffffffff000000000000000084549351891b169163ffffffff8c1b90518c1b16926fffffffffffffffffffffffffffffffff1916171717905560035482600181831601169067ffffffffffffffff191617600355600254918260a01c1689116102ba575b505081519384526020840152820152a3005b67ffffffffffffffff60a01b1990911660a09190911b67ffffffffffffffff60a01b16176002555f806102a8565b8351631704333160e21b8152808601889052602490fd5b50505051637c946ed760e01b8152fd5b5085156101c5565b5087156101be565b50516282b42960e81b8152fd5b90505f54163314155f6101a3565b509034610148576020366003190112610148576001600160a01b03813581811693919290849003610148575f549283169182330361013c57841561012f57505082907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e05f80a36001600160a01b031916175f55005b5034610148575f3660031901126101485760025490516001600160a01b039091168152602090f35b5034610148576060366003190112610148576103f161068e565b916044359067ffffffffffffffff90818311610148573660238401121561014857820135908111610148573660248260051b8401011161014857602093602461043f930190602435906107e0565b90519015158152f35b50903461014857602036600319011261014857356001600160a01b038116810361014857610475906106f1565b60ff8351921682526020820152f35b5034610148575f366003190112610148576020905169d3c21bcecceda10000008152f35b5034610148575f3660031901126101485760209067ffffffffffffffff60025460a01c169051908152f35b5034610148575f366003190112610148575f5490516001600160a01b039091168152602090f35b503461014857602036600319011261014857606060809267ffffffffffffffff908161052461068e565b165f52602052825f20928051610539816106a5565b600185549586835201549283169081602082015263ffffffff8085851c16948585840152861c169485910152815194855260208501528301526060820152f35b5034610148575f36600319011261014857602090516a0422ca8b0a00a4250000008152f35b5034610148576020366003190112610148576001600160a01b038235818116929083900361014857815f541633036106345782156106255760025491821661061657506001600160a01b03191681176002557f32c7b76d9f1306269f35334c3297b97f9c77edd3d53796341a0a2f15f89f22005f80a2005b5163f8b5804160e01b81528390fd5b51637c946ed760e01b81528390fd5b516282b42960e81b81528390fd5b5034610148575f3660031901126101485760015490516001600160a01b039091168152602090f35b34610148575f3660031901126101485760209067ffffffffffffffff600354168152f35b6004359067ffffffffffffffff8216820361014857565b6080810190811067ffffffffffffffff8211176106c157604052565b634e487b7160e01b5f52604160045260245ffd5b6060810190811067ffffffffffffffff8211176106c157604052565b6002546001600160a01b039081169291831580156107d6575b6107cc576040516370a0823160e01b81529116600482015291602090839060249082905afa9182156107c1575f92610777575b50816a0422ca8b0a00a425000000811015610770575069d3c21bcecceda100000082101561076a575f9190565b60019190565b6002925090565b90915060203d6020116107ba575b601f8101601f1916820167ffffffffffffffff8111838210176106c1576020918391604052810103126101485751905f61073d565b503d610785565b6040513d5f823e3d90fd5b505090505f905f90565b508181161561070a565b67ffffffffffffffff90939193165f52602060046020526040805f205494851561087f57939291905f935b83851061081b5750505050501490565b90919293946001908660051b830135808211155f1461085c578451908682019283528582015284815261084d816106d5565b519020955b019392919061080b565b9084519086820192835285820152848152610876816106d5565b51902095610852565b5050505050505f9056fea2646970667358221220644005af87b0f1b11b342322d82ce2a46f3c1b46396d0eaba3054b09e105ab9664736f6c63430008180033"
+}

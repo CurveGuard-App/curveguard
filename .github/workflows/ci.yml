@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Run core, CLI & contract unit/fuzz tests
+        run: node --test packages/core/test/*.test.js packages/cli/test/*.test.js contracts/test/*.test.js
+      - name: Run mechanical claimcheck
+        run: node tools/claimcheck.mjs
+      - name: Verify standalone CLI prepack bundle
+        working-directory: packages/cli
+        run: |
+          node scripts/vendor-core.mjs
+          node bin/curveguard.js doctor
+          node scripts/vendor-core.mjs --clean

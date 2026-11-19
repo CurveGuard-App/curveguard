@@ -1,0 +1,23 @@
+{
+  "name": "curveguard-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "CurveGuard — 0-wallet sniper-wall & swarm X-ray, onchain Merkle audit seals, and local non-custodial auto-guard for Robinhood Chain (4663).",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "packages/core",
+    "packages/cli",
+    "apps/worker"
+  ],
+  "scripts": {
+    "test": "node --test \"packages/core/test/*.test.js\" \"packages/cli/test/*.test.js\" \"contracts/test/*.test.js\" \"apps/worker/test/*.test.js\"",
+    "test:core": "node --test \"packages/core/test/*.test.js\"",
+    "test:cli": "node --test \"packages/cli/test/*.test.js\"",
+    "test:contracts": "node --test \"contracts/test/*.test.js\"",
+    "claimcheck": "node tools/claimcheck.mjs"
+  },
+  "license": "MIT"
+}

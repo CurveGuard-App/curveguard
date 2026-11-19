@@ -1,0 +1,11 @@
+{
+  "name": "curveguard",
+  "version": "0.1.0",
+  "description": "0-wallet sniper-wall & swarm X-ray, Merkle seal verifier, and local curve guard for Robinhood Chain (4663).",
+  "mcpServers": {
+    "curveguard": {
+      "command": "npx",
+      "args": ["-y", "curveguard", "mcp"]
+    }
+  }
+}

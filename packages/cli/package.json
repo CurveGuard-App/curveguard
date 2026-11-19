@@ -1,0 +1,54 @@
+{
+  "name": "curveguard",
+  "version": "0.1.0",
+  "description": "0-wallet sniper-wall & swarm X-ray, onchain Merkle audit verifier, stdio MCP server, and local non-custodial curve guard for Robinhood Chain (4663).",
+  "type": "module",
+  "bin": {
+    "curveguard": "./bin/curveguard.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "prepack": "node scripts/vendor-core.mjs",
+    "postpack": "node scripts/vendor-core.mjs --clean"
+  },
+  "keywords": [
+    "robinhood-chain",
+    "pons",
+    "bonding-curve",
+    "sniper-detector",
+    "mcp",
+    "mcp-server",
+    "claude-code",
+    "cursor",
+    "codex",
+    "onchain-forensics",
+    "merkle-proof",
+    "cli"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://curveguard.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CurveGuard-App/curveguard.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/CurveGuard-App/curveguard/issues"
+  },
+  "author": {
+    "name": "CurveGuard",
+    "url": "https://curveguard.app"
+  },
+  "license": "MIT"
+}

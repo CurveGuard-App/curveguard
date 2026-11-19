@@ -1,0 +1,10 @@
+{
+  "name": "@curveguard/worker",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "deploy": "npx wrangler deploy"
+  },
+  "license": "MIT"
+}
